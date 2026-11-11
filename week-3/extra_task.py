@@ -1,5 +1,7 @@
 from collections import Counter, defaultdict
-import itertools
+from itertools import groupby
+from operator import itemgetter
+from datetime import date
 
 # Problems 1, 2, 3, 4, 6, 9
 claims = [
@@ -37,19 +39,38 @@ opening_balance = 1000.00
 
 
 #prob1: Given a list of claim payment dictionaries, return total paid per provider.
-def total_paid_provider(claims):
-    output_dict = {}
-    for i in claims:
-        if i['provider'] in output_dict.keys():
-            output_dict[i['provider']] = output_dict[i['provider']] + i['amount']
-        else:
-            output_dict[i['provider']] =  i['amount']
-    cnt = 0
-    for k,v in sorted(output_dict.items(), key=lambda item:item[1], reverse=True):
-        if cnt == 3:
-            break
-        else:
-            cnt +=1 
-            print(k,v)
+def claim_payment_per_provider(claims:list):
+    claims_counter = Counter()
+    for claim in claims:
+        claims_counter[claim['provider']] += claim['amount']
+    return claims_counter
 
-total_paid_provider(claims)
+#prob2: Same data: return the top 3 providers by amount paid.
+def top_three_providers(providers:dict):
+    top_three = Counter(providers).most_common(3)
+    return top_three
+
+#prob3: Group claim payments by month. Return a dictionary of month to list of amounts.
+def amount_by_month(claims:list):
+    month_amt_dict = defaultdict(list)
+    for claim in claims:
+        month = date.fromisoformat(claim['date']).strftime("%Y-%m")
+        month_amt_dict[month].append(claim['amount'])
+    return month_amt_dict
+
+def duplicate_claim_payments(claims: list):
+    claims_list = defaultdict(list)
+    for claim in claims:
+        key = (claim['provider'], claim['date'], claim['amount'])
+        claims_list[key].append(claim['claim_id'])
+    return [ids for ids in claims_list.values() if len(ids) > 1]
+        
+
+claims_per_provider = claim_payment_per_provider(claims)
+top_three_providers_list = top_three_providers(claims_per_provider)
+monthly_amount = amount_by_month(claims)
+dup_claims = duplicate_claim_payments(claims)
+print(dict(claims_per_provider))
+print(top_three_providers_list)
+print(dict(monthly_amount))
+print(dup_claims)
