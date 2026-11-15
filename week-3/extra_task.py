@@ -1,7 +1,7 @@
 from collections import Counter, defaultdict
 from itertools import groupby
 from operator import itemgetter
-from datetime import date
+from datetime import date, datetime
 
 # Problems 1, 2, 3, 4, 6, 9
 claims = [
@@ -58,19 +58,100 @@ def amount_by_month(claims:list):
         month_amt_dict[month].append(claim['amount'])
     return month_amt_dict
 
+#prob4: Find duplicate claim payments (same date, amount and provider).
 def duplicate_claim_payments(claims: list):
     claims_list = defaultdict(list)
     for claim in claims:
         key = (claim['provider'], claim['date'], claim['amount'])
         claims_list[key].append(claim['claim_id'])
     return [ids for ids in claims_list.values() if len(ids) > 1]
-        
+
+#prob5: Given a list of dates, find the longest run of consecutive days.
+def consecutive_days(dates:list):
+    sorted_dates = sorted({date.fromisoformat(d) for d in dates})
+    best=current=1
+    for a,b in zip(sorted_dates, sorted_dates[1:]):
+        if (b-a).days == 1:
+            current +=1
+            best = max(best, current)
+        else:
+            current = 1
+    return best
+
+#prob6: Flatten a list of lists of claim payments into one list.
+def flatten_claims_payment(batches: list[list[dict]]) -> list[dict]:
+    flatten_list = []
+    for claim in batches:
+        for cl in claim:
+            flatten_list.append(cl)
+    return flatten_list
+
+#prob7: Merge two dictionaries of provider totals, adding the values for shared providers.
+def merged_dict(dict1:dict, dict2:dict):
+    merged = dict1.copy()
+    #another approach is using Counter.
+    #merged = Counter(dict1)
+    #merged.update(dict2)
+    #return dict(merged)
+    for key,val in dict2.items():
+        merged[key] = merged.get(key, 0) + val  #we can use get, here get helps in getting the value from the dict if it exist and then adding the value, if the key doesn't exist then it adds new value as well.
+    return merged
+
+#prob8: Parse strings like `USD 1,234.50 Dr` into signed floats.
+def cleaning_values(amount:list):
+    cleaned_list = []
+    for amt in amount:
+        currency, number, side = amt.split()
+        value = float(number.replace(",", ""))
+        if side == 'Dr':
+            cleaned_list.append(-value)
+        elif side == 'Cr':
+            cleaned_list.append(value)
+        else:
+            raise ValueError(f"unknown suffix {side!r} in {amt!r}")
+    return cleaned_list
+
+#prob9: Return the first provider that appears exactly once.
+def first_unique_provider(claims:list):
+    #another way is using counter
+    #count = Counter(claim['provider] for claim in claims)
+    #return next((provider for provider, n in count.items() if n==1), None)
+    count_dict = {}
+    for cl in claims:
+        count_dict[cl['provider']] = count_dict.get(cl['provider'], 0)+1
+    first_provider = next((k for k,v in count_dict.items() if v==1), None)
+    return first_provider
+
+#prob10: Given an opening balance and a list of signed amounts, return the running balance after each one.
+def final_balance(amounts:list, opening_balance:float) -> list:
+   balance = opening_balance
+   balances = []
+   for amt in amounts:
+       balance += amt
+       balances.append(round(balance, 2))
+   return balances
+    #another way for doing this is using itertools accumulate
+    #return list(accumulate(amounts, initial=opening_balance))[1:]
+
+
 
 claims_per_provider = claim_payment_per_provider(claims)
 top_three_providers_list = top_three_providers(claims_per_provider)
 monthly_amount = amount_by_month(claims)
 dup_claims = duplicate_claim_payments(claims)
+longest_cons_days = consecutive_days(dates)
+flatten_claims_list = flatten_claims_payment(batches)
+merged_dictionary = merged_dict(april, may)
+cleaned_list = cleaning_values(raw_amounts)
+unique_provider = first_unique_provider(claims)
+updated_balances = final_balance(cleaned_list, opening_balance)
 print(dict(claims_per_provider))
 print(top_three_providers_list)
 print(dict(monthly_amount))
 print(dup_claims)
+print(longest_cons_days)
+print(flatten_claims_list)
+print(merged_dictionary)
+print(cleaned_list)
+print(unique_provider)
+print(updated_balances)
