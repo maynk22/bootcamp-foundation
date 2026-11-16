@@ -1,0 +1,11 @@
+policy_id,customer_name,product,start_date,sum_insured,annual_premium,status,city
+HM-1001,Asha Verma,Home,2025-01-15,250000,1200.50,active,Hyderabad
+HM-1002,Rohan Mehta,Auto,2025-02-01,18000,640.00,active,Mumbai
+HM-1003,"Iyer, Lakshmi",Home,2024-11-20,310000,1485.75,active,Chennai
+HM-1004,Daniel Brooks,Life,2023-06-30,500000,2100.00,lapsed,Kingston
+HM-1005,Fatima Khan,Auto,2025-03-10,22000,710.25,active,Hyderabad
+HM-1006,Neha Gupta,Health,2024-09-01,75000,980.00,active,Delhi
+HM-1007,Carlos Mendez,Home,2022-12-05,185000,,cancelled,Bridgetown
+HM-1008,Priya Nair,Life,2025-04-18,400000,1750.40,active,Kochi
+HM-1009,Tom Richards,Auto,2024-07-22,15000,520.90,expired,Nassau
+HM-1010,Anil Reddy,Health,2025-05-02,100000,1320.00,active,Hyderabad

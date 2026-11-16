@@ -1,0 +1,16 @@
+{
+  "source": "harbor_mutual_sample",
+  "generated_on": "2025-06-01",
+  "policies": [
+    {"policy_id": "HM-1001", "customer": {"name": "Asha Verma", "city": "Hyderabad"}, "product": "Home", "start_date": "2025-01-15", "sum_insured": 250000, "annual_premium": 1200.50, "status": "active", "riders": ["flood", "theft"]},
+    {"policy_id": "HM-1002", "customer": {"name": "Rohan Mehta", "city": "Mumbai"}, "product": "Auto", "start_date": "2025-02-01", "sum_insured": 18000, "annual_premium": 640.00, "status": "active", "riders": []},
+    {"policy_id": "HM-1003", "customer": {"name": "Lakshmi Iyer", "city": "Chennai"}, "product": "Home", "start_date": "2024-11-20", "sum_insured": 310000, "annual_premium": 1485.75, "status": "active", "riders": ["flood"]},
+    {"policy_id": "HM-1004", "customer": {"name": "Daniel Brooks", "city": "Kingston"}, "product": "Life", "start_date": "2023-06-30", "sum_insured": 500000, "annual_premium": 2100.00, "status": "lapsed", "riders": ["accidental_death"]},
+    {"policy_id": "HM-1005", "customer": {"name": "Fatima Khan", "city": "Hyderabad"}, "product": "Auto", "start_date": "2025-03-10", "sum_insured": 22000, "annual_premium": 710.25, "status": "active", "riders": ["roadside_assist"]},
+    {"policy_id": "HM-1006", "customer": {"name": "Neha Gupta", "city": "Delhi"}, "product": "Health", "start_date": "2024-09-01", "sum_insured": 75000, "annual_premium": 980.00, "status": "active", "riders": []},
+    {"policy_id": "HM-1007", "customer": {"name": "Carlos Mendez", "city": "Bridgetown"}, "product": "Home", "start_date": "2022-12-05", "sum_insured": 185000, "annual_premium": null, "status": "cancelled", "riders": []},
+    {"policy_id": "HM-1008", "customer": {"name": "Priya Nair", "city": "Kochi"}, "product": "Life", "start_date": "2025-04-18", "sum_insured": 400000, "annual_premium": 1750.40, "status": "active", "riders": []},
+    {"policy_id": "HM-1009", "customer": {"name": "Tom Richards", "city": "Nassau"}, "product": "Auto", "start_date": "2024-07-22", "sum_insured": 15000, "annual_premium": 520.90, "status": "expired", "riders": []},
+    {"policy_id": "HM-1010", "customer": {"name": "Anil Reddy", "city": "Hyderabad"}, "product": "Health", "start_date": "2025-05-02", "sum_insured": 100000, "annual_premium": 1320.00, "status": "active", "riders": ["maternity"]}
+  ]
+}
