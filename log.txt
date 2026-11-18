@@ -1,0 +1,17 @@
+2026-11-18 20:36:54,076 INFO __main__: {'policy_id': 'HM-1001', 'customer': {'name': 'Asha Verma', 'city': 'Hyderabad'}, 'product': 'Home', 'start_date': '2025-01-15', 'sum_insured': 250000, 'annual_premium': 1200.5, 'status': 'active', 'riders': ['flood', 'theft']}
+2026-11-18 20:36:54,076 INFO __main__: {'policy_id': 'HM-1002', 'customer': {'name': 'Rohan Mehta', 'city': 'Mumbai'}, 'product': 'Auto', 'start_date': '2025-02-01', 'sum_insured': 18000, 'annual_premium': 640.0, 'status': 'active', 'riders': []}
+2026-11-18 20:36:54,076 INFO __main__: {'policy_id': 'HM-1003', 'customer': {'name': 'Lakshmi Iyer', 'city': 'Chennai'}, 'product': 'Home', 'start_date': '2024-11-20', 'sum_insured': 310000, 'annual_premium': 1485.75, 'status': 'active', 'riders': ['flood']}
+2026-11-18 20:36:54,076 INFO __main__: {'policy_id': 'HM-1004', 'customer': {'name': 'Daniel Brooks', 'city': 'Kingston'}, 'product': 'Life', 'start_date': '2023-06-30', 'sum_insured': 500000, 'annual_premium': 2100.0, 'status': 'lapsed', 'riders': ['accidental_death']}
+2026-11-18 20:36:54,076 INFO __main__: {'policy_id': 'HM-1005', 'customer': {'name': 'Fatima Khan', 'city': 'Hyderabad'}, 'product': 'Auto', 'start_date': '2025-03-10', 'sum_insured': 22000, 'annual_premium': 710.25, 'status': 'active', 'riders': ['roadside_assist']}
+2026-11-18 20:36:54,076 INFO __main__: {'policy_id': 'HM-1006', 'customer': {'name': 'Neha Gupta', 'city': 'Delhi'}, 'product': 'Health', 'start_date': '2024-09-01', 'sum_insured': 75000, 'annual_premium': 980.0, 'status': 'active', 'riders': []}
+2026-11-18 20:36:54,076 INFO __main__: {'policy_id': 'HM-1007', 'customer': {'name': 'Carlos Mendez', 'city': 'Bridgetown'}, 'product': 'Home', 'start_date': '2022-12-05', 'sum_insured': 185000, 'annual_premium': None, 'status': 'cancelled', 'riders': []}
+2026-11-18 20:36:54,076 INFO __main__: {'policy_id': 'HM-1008', 'customer': {'name': 'Priya Nair', 'city': 'Kochi'}, 'product': 'Life', 'start_date': '2025-04-18', 'sum_insured': 400000, 'annual_premium': 1750.4, 'status': 'active', 'riders': []}
+2026-11-18 20:36:54,076 INFO __main__: {'policy_id': 'HM-1009', 'customer': {'name': 'Tom Richards', 'city': 'Nassau'}, 'product': 'Auto', 'start_date': '2024-07-22', 'sum_insured': 15000, 'annual_premium': 520.9, 'status': 'expired', 'riders': []}
+2026-11-18 20:36:54,076 INFO __main__: {'policy_id': 'HM-1010', 'customer': {'name': 'Anil Reddy', 'city': 'Hyderabad'}, 'product': 'Health', 'start_date': '2025-05-02', 'sum_insured': 100000, 'annual_premium': 1320.0, 'status': 'active', 'riders': ['maternity']}
+2026-11-18 20:56:13,992 INFO __main__: 10 policies loaded
+2026-11-18 21:53:28,998 INFO __main__: Loaded 10 policies
+2026-11-18 21:55:42,461 INFO __main__: Loaded 10 policies
+2026-11-18 21:55:42,462 INFO __main__: Added 7 active policies to data/active_policies.json
+2026-11-18 23:24:31,997 ERROR load_json_file: File not found: /week-4/data/policies.json
+2026-11-18 23:25:09,736 INFO __main__: Loaded 10 policies
+2026-11-18 23:25:09,737 INFO __main__: Added 7 active policies to ../week-4/data/active_policies.json
