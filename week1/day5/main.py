@@ -1,6 +1,6 @@
 import logging
-from load_json_file import load_json_file
-from write_to_json import write_json_file
+from week1.day5.load_json_file import load_json_file
+from week1.day5.write_to_json import write_json_file
 
 json_file_path='../week-4/data/policies.json'
 write_file_path = '../week-4/data/active_policies.json'

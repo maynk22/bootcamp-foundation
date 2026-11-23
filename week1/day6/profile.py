@@ -30,7 +30,7 @@ import logging
 import csv
 from collections import Counter, defaultdict
 
-file_path = 'data/Indian_Web_Series_2014_2025_Episodes_Clean.csv'
+file_path = '../../data/Indian_Web_Series_2014_2025_Episodes_Clean.csv'
 
 def profiling_csv(file_path, top_n):
     with open(file_path, encoding='utf-8', newline='') as csv_open:

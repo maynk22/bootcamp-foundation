@@ -1,7 +1,7 @@
 import json
 import logging
 
-json_file_path='data/policies.json'
+json_file_path='../../data/policies.json'
 log_file_path='../log.txt'
 
 
@@ -24,6 +24,6 @@ else:
         logger.debug(policy)
 
 
-with open('data/active_policies.json', 'w', encoding='utf-8') as f:
+with open('../../data/active_policies.json', 'w', encoding='utf-8') as f:
     active_policies = [policy for policy in policies if policy['status']=='active']
     load_active_policies = json.dump(active_policies, f, indent=2)
